@@ -22,11 +22,11 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-- task: DownloadBuildArtifacts@1
+
+- task: DownloadPipelineArtifact@1
   inputs:
     buildType: 'specific'
     project: 'f8cc4d21-5444-4f01-a640-025e09262a05'
-    pipeline: '100'
+    definition: '100'
     buildVersionToDownload: 'latest'
-    downloadType: 'specific'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    targetPath: '$(Pipeline.Workspace)'
