@@ -23,10 +23,8 @@ steps:
     goals: 'package'
 
 
-- task: DownloadPipelineArtifact@1
+- task: PublishPipelineArtifact@1
   inputs:
-    buildType: 'specific'
-    project: 'f8cc4d21-5444-4f01-a640-025e09262a05'
-    definition: '100'
-    buildVersionToDownload: 'latest'
     targetPath: '$(Pipeline.Workspace)'
+    artifact: 'Crimminz'
+    publishLocation: 'pipeline'
